@@ -1,6 +1,19 @@
-function hasTargetSum(array, target) {
-  // Write your algorithm here
+function hasTargetSum(nums, target) {
+  const complements = {};
+
+  for (let num of nums) {
+    const complement = target - num;
+
+    if (complements[complement]) {
+      return true;
+    }
+
+    complements[num] = true;
+  }
+
+  return false;
 }
+
 
 /* 
   Write the Big O time complexity of your function here
